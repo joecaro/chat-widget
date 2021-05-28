@@ -15,7 +15,7 @@ function App() {
     if (!open) {
       setIframeStyles({
         margin: "30px auto 20px",
-        height: "400px",
+        height: "600px",
         width: "400px",
         border: "none",
         transition: ".2s",
