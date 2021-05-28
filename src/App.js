@@ -34,7 +34,13 @@ function App() {
   return (
     <div className='App'>
       <div className='App-header'>
-        Crimson App with Chat
+        <h1>Crimson App with Chat</h1>
+        <p>Type things like:</p>
+        <p>
+          <span>"Hello"</span>
+          <span>"Start over"</span>
+          <span>"How do I import"</span>
+        </p>
         <iframe
           style={iframeStyles}
           src='https://x8ywi-ajo2p-e78sa.netlify.app/'
