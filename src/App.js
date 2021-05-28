@@ -1,23 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const [iframeStyles, setIframeStyles] = useState({
+    margin: "0",
+    height: "0",
+    width: "0",
+    border: "none",
+    transition: ".2s",
+  });
+
+  function handleToggle() {
+    if (!open) {
+      setIframeStyles({
+        margin: "30px auto 20px",
+        height: "400px",
+        width: "400px",
+        border: "none",
+        transition: ".2s",
+      });
+    } else
+      setIframeStyles({
+        margin: "0",
+        height: "0",
+        width: "0",
+        border: "none",
+        transition: ".2s",
+      });
+    setOpen(!open);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <div className='App-header'>
+        Crimson App with Chat
+        <iframe
+          style={iframeStyles}
+          src='https://x8ywi-ajo2p-e78sa.netlify.app/'
+          title='Chat Bot'></iframe>
+        <button className='App-button' type='button' onClick={handleToggle}>
+          <i class='bi bi-chat-square'></i>
+        </button>
+      </div>
     </div>
   );
 }
