@@ -23,7 +23,7 @@ function App() {
       });
     } else
       setIframeStyles({
-        margin: "0",
+        margin: "0 auto 40px",
         height: "0",
         width: "0",
         border: "none",
@@ -49,7 +49,7 @@ function App() {
           <span>"Start over"</span>
           <span>"How do I import"</span>
         </p>
-        <div style={iframeStyles}>
+        <div className='App-chat-container'>
           {open && (
             <button
               className='App-change-button'
@@ -58,6 +58,7 @@ function App() {
               <p>Talk to {src === "AI" ? "Human" : "Virtual Assistant"}</p>
             </button>
           )}
+          <br />
           <iframe
             style={iframeStyles}
             src={
@@ -66,10 +67,12 @@ function App() {
                 : "https://static.zdassets.com/web_widget/latest/liveChat.html?v=10#key=cmdihelp.zendesk.com&settings=JTdCJTIyd2ViV2lkZ2V0JTIyJTNBJTdCJTIyY2hhdCUyMiUzQSU3QiUyMnRpdGxlJTIyJTNBbnVsbCUyQyUyMm1lbnVPcHRpb25zJTIyJTNBJTdCJTIyZW1haWxUcmFuc2NyaXB0JTIyJTNBdHJ1ZSU3RCUyQyUyMmRlcGFydG1lbnRzJTIyJTNBJTdCJTdEJTJDJTIycHJlY2hhdEZvcm0lMjIlM0ElN0IlMjJkZXBhcnRtZW50TGFiZWwlMjIlM0FudWxsJTJDJTIyZ3JlZXRpbmclMjIlM0FudWxsJTdEJTJDJTIyb2ZmbGluZUZvcm0lMjIlM0ElN0IlMjJncmVldGluZyUyMiUzQW51bGwlN0QlMkMlMjJjb25jaWVyZ2UlMjIlM0ElN0IlMjJhdmF0YXJQYXRoJTIyJTNBbnVsbCUyQyUyMm5hbWUlMjIlM0FudWxsJTJDJTIydGl0bGUlMjIlM0FudWxsJTdEJTdEJTJDJTIyY29sb3IlMjIlM0ElN0IlMjJhcnRpY2xlTGlua3MlMjIlM0ElMjIlMjIlMkMlMjJidXR0b24lMjIlM0ElMjIlMjIlMkMlMjJoZWFkZXIlMjIlM0ElMjIlMjIlMkMlMjJsYXVuY2hlciUyMiUzQSUyMiUyMiUyQyUyMmxhdW5jaGVyVGV4dCUyMiUzQSUyMiUyMiUyQyUyMnJlc3VsdExpc3RzJTIyJTNBJTIyJTIyJTJDJTIydGhlbWUlMjIlM0FudWxsJTdEJTdEJTdE&&locale=en-US&title=Web%20Widget%20Live%20Chat"
             }
             title='Chat AI'></iframe>
+          <button className='App-button' type='button' onClick={handleToggle}>
+            <span className='App-button-icon'>
+              <i className='bi bi-chat-square'></i>
+            </span>
+          </button>
         </div>
-        <button className='App-button' type='button' onClick={handleToggle}>
-          <i class='bi bi-chat-square'></i>
-        </button>
       </div>
     </div>
   );
