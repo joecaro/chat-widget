@@ -19,6 +19,7 @@ function App() {
         height: "600px",
         width: "400px",
         border: "none",
+        borderRadius: "5px",
         transition: ".2s",
       });
     } else
